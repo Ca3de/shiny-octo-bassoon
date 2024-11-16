@@ -1,0 +1,601 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: url('images/background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Header Layout */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Space between business name and buttons */
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    margin-left: 10px;
+    background: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.header-btn i {
+    margin-right: 8px;
+}
+
+.header-btn:hover {
+    background: #c0392b;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Business Name with Signature Font */
+.business-name {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px; /* Adjusted for prominence */
+    color: #00c3ff;
+    position: relative;
+    padding: 5px 10px;
+    background-size: cover;
+    border-radius: 5px;
+    margin-left: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Adds subtle shadow for better readability */
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+nav ul li a.active {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Close Button Styles */
+.close-btn {
+    display: none; /* Hidden on desktop */
+    text-align: right;
+    padding: 10px 20px;
+}
+
+.close-hamburger {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Status Message Styles */
+#status-message {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto 20px auto;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hero-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px; /* To offset the fixed header */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 62, 80, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hero-header .logo img {
+    height: 60px; /* Slightly larger logo in hero */
+    margin-right: 10px;
+}
+
+.hero-header .business-name {
+    font-size: 32px; /* Ensures consistency with header */
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.special-h2{
+    color: #ff1300;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.about {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.medicaid {
+    background: rgba(198, 198, 198, 0.97);
+}
+
+.services {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.contact {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.gallery{
+    background: rgb(119, 187, 255);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+/* About Us Content Layout */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-image {
+    align-self: center;
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+}
+
+.about p {
+    flex: 2 1 400px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Services List Layout */
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.service-item {
+    flex: 1 1 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+    color: #e74c3c;
+}
+
+.service-item ul {
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Gallery Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Medicaid Content Layout */
+.medicaid-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.medicaid-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+}
+
+.medicaid-text {
+    flex: 2 1 400px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Contact Section Image */
+.contact-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact p{
+    text-align: center;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form .required {
+    color: red;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+.contact-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.contact-form button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #c0392b;
+}
+
+/* Footer */
+footer {
+    background: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #e74c3c;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust header layout for smaller screens */
+    header .container {
+        flex-wrap: wrap;
+    }
+
+    /* Hide the navigation and header buttons on small screens */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background: rgba(44, 62, 80, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding-top: 80px;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    /* Show navigation when active */
+    nav ul.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1.5em;
+        color: #fff;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Disable scrolling when menu is open */
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    .close-btn {
+        display: block;
+    }
+
+    /* Hide header buttons on small screens */
+    .header-buttons {
+        display: none;
+    }
+
+    /* Adjust About Us, Services, and Medicaid Sections for Small Screens */
+    .about-content,
+    .service-list,
+    .medicaid-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about p,
+    .service-item p,
+    .service-item ul,
+    .medicaid-text {
+        text-align: center;
+    }
+
+    /* Adjust business name font size for smaller screens */
+    .business-name {
+        font-size: 24px;
+    }
+
+    .hero-header .business-name {
+        font-size: 24px;
+    }
+
+    /* Adjust font size in hero section */
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
