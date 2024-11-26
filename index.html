@@ -238,17 +238,6 @@
 
 <!-- Status Message Script -->
 <script>
-    
-    // Initialize AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: false,
-            mirror: false
-        });
-    }
-    
     // Function to get query parameters
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -269,6 +258,15 @@
 </script>
 <!-- AOS JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- Initialize AOS After AOS JS is Loaded -->
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true, // Animations should happen only once
+        mirror: false
+    });
+</script>
 <!-- JavaScript for Hamburger Menu and Animations -->
 <script src="script.js"></script>
 </body>
