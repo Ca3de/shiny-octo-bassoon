@@ -471,6 +471,32 @@ section h2 {
     background: #c0392b;
 }
 
+/* Contact Address Section */
+.contact-address {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-address h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.contact-address p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact-address .btn {
+    background: #3498db; /* Different color to distinguish */
+}
+
+.contact-address .btn:hover {
+    background: #2980b9;
+}
+
 /* Footer */
 footer {
     background: rgba(44, 62, 80, 0.9);
