@@ -232,6 +232,17 @@
 
 <!-- Status Message Script -->
 <script>
+    
+    // Initialize AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false
+        });
+    }
+    
     // Function to get query parameters
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
