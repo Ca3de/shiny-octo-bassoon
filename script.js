@@ -22,16 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Initialize AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: false,
-            mirror: false
-        });
-    }
-
     // Hide navigation menu when clicking outside of it
     document.addEventListener('click', function (e) {
         if (navLinks.classList.contains('active')) {
