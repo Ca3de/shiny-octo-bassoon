@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Fade-in Animation on Scroll
+    /*
     const fadeElements = document.querySelectorAll('.fade-in');
 
     const fadeInObserver = new IntersectionObserver(entries => {
@@ -115,4 +116,5 @@ document.addEventListener('DOMContentLoaded', function () {
     fadeElements.forEach(el => {
         fadeInObserver.observe(el);
     });
+    */
 });
