@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directions | First Divine Touch</title>
+    <!-- Favicon and other links -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section (You can reuse the same header as index.html) -->
+    <header>
+        <div class="container">
+            <!-- Logo and Business Name -->
+            <div class="header-left">
+                <div class="logo">
+                    <img src="images/logo.png" alt="First Divine Touch Logo" loading="lazy">
+                </div>
+                <h1 class="business-name">First Divine Touch</h1>
+            </div>
+
+            <!-- Call and Message Buttons -->
+            <div class="header-buttons">
+                <a href="tel:4439852346" class="header-btn call-btn" aria-label="Call us">
+                    <i class="fas fa-phone-alt"></i> Call Us
+                </a>
+                <a href="#contact" class="header-btn message-btn" aria-label="Send us a message">
+                    <i class="fas fa-envelope"></i> Message
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#medicaid">Medicaid</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <!-- Close Button -->
+                    <li class="close-btn">
+                        <button class="close-hamburger" aria-label="Close navigation">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Directions Section -->
+    <section class="directions">
+        <div class="container">
+            <h2>Get Directions to Our Office</h2>
+            <div class="map-container" data-aos="fade-up">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.947321467444!2d-86.14841928459365!3d39.81790817944358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b50a2b8a1ccef%3A0x8b1c1e8d8f5c3c4!2s9251%20Bratton%20Ct%2C%20Indianapolis%2C%20IN%2046234!5e0!3m2!1sen!2sus!4v1697723949234!5m2!1sen!2sus"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="directions-instructions" data-aos="fade-up" data-aos-delay="200">
+                You can use the map above to find the best route to our office. If you have any questions, feel free to contact us!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section (Optional: You can reuse the same footer as index.html) -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 First Divine Touch. All rights reserved.</p>
+            <!-- Optional: Social Media Icons -->
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-solid fa-location-dot fa-flip"></i></a>
+                <!-- Add more icons as needed -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+    <!-- JavaScript for Hamburger Menu and Animations (Reusing script.js) -->
+    <script src="script.js"></script>
+</body>
+</html>
