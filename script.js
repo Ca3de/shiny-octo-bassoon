@@ -35,13 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const closeBtn = document.querySelector('.close-hamburger');
-
-    // Close the navigation menu when the close button is clicked
-    closeBtn.addEventListener('click', function () {
-        navLinks.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-        hamburger.setAttribute('aria-expanded', 'false'); // Set to 'false' string
-    });
+    if (closeBtn) { // Ensure closeBtn exists
+        // Close the navigation menu when the close button is clicked
+        closeBtn.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            hamburger.setAttribute('aria-expanded', 'false'); // Set to 'false' string
+        });
+    }
 
     const sections = document.querySelectorAll('section');
     const navLi = document.querySelectorAll('nav ul li a');
@@ -58,12 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         navLi.forEach(a => {
             a.classList.remove('active');
-            if (a.getAttribute('href').includes(current)) {
+            // Only add 'active' class if href exactly matches the current section
+            if (a.getAttribute('href') === `#${current}`) {
                 a.classList.add('active');
             }
         });
     });
-
 
     // Close the menu when the Esc key is pressed
     document.addEventListener('keydown', function (e) {
@@ -75,32 +76,50 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
-    // Close the menu when a navigation link is clicked
+    // Close the menu when a navigation link is clicked (only if it's an internal link)
     navLinks.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A') {
-            navLinks.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-            hamburger.setAttribute('aria-expanded', 'false'); // Set to 'false' string
+        const target = e.target;
+        if (target.tagName === 'A') {
+            const href = target.getAttribute('href');
+            if (href.startsWith('#')) { // Check if it's an internal link
+                navLinks.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                hamburger.setAttribute('aria-expanded', 'false'); // Set to 'false' string
+            }
+            // Else, it's an external link and should be handled normally
         }
     });
 
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for internal navigation links
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 60, // Adjust based on header height
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) { // Only prevent default if it's an internal link
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 60, // Adjust based on header height
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // Else, allow default behavior for external links
         });
     });
 
-    // Fade-in Animation on Scroll
+    // Initialize AOS (if not already initialized in another script)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true, // Animations should happen only once
+            mirror: false
+        });
+    }
+
+    // Remove or comment out the custom IntersectionObserver for fade-in if using AOS
     /*
     const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -108,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                fadeInObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
